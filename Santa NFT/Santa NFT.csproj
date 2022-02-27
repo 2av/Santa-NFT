@@ -1,0 +1,449 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C6FEC5BD-482C-4B4F-A249-217105186178}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Santa_NFT</RootNamespace>
+    <AssemblyName>Santa NFT</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44356</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\assets\css\animate.css" />
+    <Content Include="Content\assets\css\blast.min.css" />
+    <Content Include="Content\assets\css\bootstrap.min.css" />
+    <Content Include="Content\assets\css\fonts\icofont.svg" />
+    <Content Include="Content\assets\css\icofont.min.css" />
+    <Content Include="Content\assets\css\lightcase.css" />
+    <Content Include="Content\assets\css\style.min.css" />
+    <Content Include="Content\assets\css\swiper-bundle.min.css" />
+    <Content Include="Content\assets\fonts\lightcase.svg" />
+    <Content Include="Content\assets\images\account\01.png" />
+    <Content Include="Content\assets\images\activity\01.gif" />
+    <Content Include="Content\assets\images\activity\02.gif" />
+    <Content Include="Content\assets\images\activity\03.gif" />
+    <Content Include="Content\assets\images\activity\04.gif" />
+    <Content Include="Content\assets\images\activity\05.gif" />
+    <Content Include="Content\assets\images\banner\01.gif" />
+    <Content Include="Content\assets\images\banner\01.png" />
+    <Content Include="Content\assets\images\banner\02.gif" />
+    <Content Include="Content\assets\images\banner\04.jpg" />
+    <Content Include="Content\assets\images\banner\05.jpg" />
+    <Content Include="Content\assets\images\banner\06.jpg" />
+    <Content Include="Content\assets\images\banner\banner-img.png" />
+    <Content Include="Content\assets\images\banner\bg-3.jpg" />
+    <Content Include="Content\assets\images\banner\bg-4.jpg" />
+    <Content Include="Content\assets\images\banner\bg-4.png" />
+    <Content Include="Content\assets\images\banner\bg.jpg" />
+    <Content Include="Content\assets\images\blog\01.gif" />
+    <Content Include="Content\assets\images\blog\01.jpg" />
+    <Content Include="Content\assets\images\blog\02.jpg" />
+    <Content Include="Content\assets\images\blog\03.jpg" />
+    <Content Include="Content\assets\images\blog\04.jpg" />
+    <Content Include="Content\assets\images\blog\icon\b-code.png" />
+    <Content Include="Content\assets\images\blog\icon\code.png" />
+    <Content Include="Content\assets\images\contact\01.png" />
+    <Content Include="Content\assets\images\contact\02.png" />
+    <Content Include="Content\assets\images\contact\03.png" />
+    <Content Include="Content\assets\images\contact\04.png" />
+    <Content Include="Content\assets\images\favicon.png" />
+    <Content Include="Content\assets\images\footer\bg-2.jpg" />
+    <Content Include="Content\assets\images\footer\bg-3.jpg" />
+    <Content Include="Content\assets\images\footer\bg-4.jpg" />
+    <Content Include="Content\assets\images\footer\bg.jpg" />
+    <Content Include="Content\assets\images\For Slider\01.jpg" />
+    <Content Include="Content\assets\images\For Slider\02.jpg" />
+    <Content Include="Content\assets\images\For Slider\03.jpg" />
+    <Content Include="Content\assets\images\For Slider\04.jpg" />
+    <Content Include="Content\assets\images\For Slider\05.jpg" />
+    <Content Include="Content\assets\images\For Slider\06.jpg" />
+    <Content Include="Content\assets\images\For Slider\07.jpg" />
+    <Content Include="Content\assets\images\For Slider\08.jpg" />
+    <Content Include="Content\assets\images\For Slider\09.jpg" />
+    <Content Include="Content\assets\images\For Slider\10.jpg" />
+    <Content Include="Content\assets\images\For Slider\11.jpg" />
+    <Content Include="Content\assets\images\For Slider\12.jpg" />
+    <Content Include="Content\assets\images\logo\logo-2.png" />
+    <Content Include="Content\assets\images\logo\logo-3.png" />
+    <Content Include="Content\assets\images\logo\logo-4.png" />
+    <Content Include="Content\assets\images\nft-item\01.gif" />
+    <Content Include="Content\assets\images\nft-item\01.jpg" />
+    <Content Include="Content\assets\images\nft-item\02.gif" />
+    <Content Include="Content\assets\images\nft-item\02.jpg" />
+    <Content Include="Content\assets\images\nft-item\03.gif" />
+    <Content Include="Content\assets\images\nft-item\03.jpg" />
+    <Content Include="Content\assets\images\nft-item\04.gif" />
+    <Content Include="Content\assets\images\nft-item\04.jpg" />
+    <Content Include="Content\assets\images\nft-item\05.gif" />
+    <Content Include="Content\assets\images\nft-item\05.jpg" />
+    <Content Include="Content\assets\images\nft-item\06.gif" />
+    <Content Include="Content\assets\images\nft-item\06.jpg" />
+    <Content Include="Content\assets\images\nft-item\07.jpg" />
+    <Content Include="Content\assets\images\nft-item\08.jpg" />
+    <Content Include="Content\assets\images\nft-item\09.jpg" />
+    <Content Include="Content\assets\images\nft-item\10.jpg" />
+    <Content Include="Content\assets\images\nft-item\blog\01.jpg" />
+    <Content Include="Content\assets\images\nft-item\blog\02.jpg" />
+    <Content Include="Content\assets\images\nft-item\blog\03.jpg" />
+    <Content Include="Content\assets\images\nft-item\blog\04.jpg" />
+    <Content Include="Content\assets\images\nft-item\blog\05.jpg" />
+    <Content Include="Content\assets\images\nft-item\blog\06.jpg" />
+    <Content Include="Content\assets\images\nft-item\blog\07.jpg" />
+    <Content Include="Content\assets\images\nft-item\blog\08.jpg" />
+    <Content Include="Content\assets\images\nft-item\blog\09.jpg" />
+    <Content Include="Content\assets\images\nft-item\blog\10.jpg" />
+    <Content Include="Content\assets\images\nft-item\blog\11.jpg" />
+    <Content Include="Content\assets\images\nft-item\blog\12.jpg" />
+    <Content Include="Content\assets\images\nft-item\category\01.jpg" />
+    <Content Include="Content\assets\images\nft-item\category\02.jpg" />
+    <Content Include="Content\assets\images\nft-item\category\03.jpg" />
+    <Content Include="Content\assets\images\nft-item\category\04.jpg" />
+    <Content Include="Content\assets\images\nft-item\category\05.jpg" />
+    <Content Include="Content\assets\images\nft-item\category\06.jpg" />
+    <Content Include="Content\assets\images\nft-item\category\07.jpg" />
+    <Content Include="Content\assets\images\nft-item\category\08.jpg" />
+    <Content Include="Content\assets\images\nft-item\category\09.jpg" />
+    <Content Include="Content\assets\images\nft-item\category\10.jpg" />
+    <Content Include="Content\assets\images\nft-item\category\11.jpg" />
+    <Content Include="Content\assets\images\nft-item\category\12.jpg" />
+    <Content Include="Content\assets\images\nft-item\category\13.jpg" />
+    <Content Include="Content\assets\images\nft-item\category\14.jpg" />
+    <Content Include="Content\assets\images\nft-item\category\15.jpg" />
+    <Content Include="Content\assets\images\nft-item\category\16.jpg" />
+    <Content Include="Content\assets\images\nft-item\category\17.jpg" />
+    <Content Include="Content\assets\images\nft-item\category\18.jpg" />
+    <Content Include="Content\assets\images\nft-item\item-details.gif" />
+    <Content Include="Content\assets\images\nft-item\style-2\01.jpg" />
+    <Content Include="Content\assets\images\nft-item\style-2\02.jpg" />
+    <Content Include="Content\assets\images\nft-item\style-2\03.jpg" />
+    <Content Include="Content\assets\images\nft-item\style-2\04.jpg" />
+    <Content Include="Content\assets\images\nft-item\style-2\05.jpg" />
+    <Content Include="Content\assets\images\nft-item\style-2\06.jpg" />
+    <Content Include="Content\assets\images\nft-item\style-2\07.jpg" />
+    <Content Include="Content\assets\images\nft-item\style-2\08.jpg" />
+    <Content Include="Content\assets\images\nft-item\style-2\09.jpg" />
+    <Content Include="Content\assets\images\nft-item\style-2\10.jpg" />
+    <Content Include="Content\assets\images\nft-item\style-3\01.png" />
+    <Content Include="Content\assets\images\nft-item\style-3\02.png" />
+    <Content Include="Content\assets\images\nft-item\style-3\03.png" />
+    <Content Include="Content\assets\images\nft-item\style-3\04.png" />
+    <Content Include="Content\assets\images\profile\cover.jpg" />
+    <Content Include="Content\assets\images\profile\Profile.jpg" />
+    <Content Include="Content\assets\images\rounded-down.svg" />
+    <Content Include="Content\assets\images\Santa_with car.png" />
+    <Content Include="Content\assets\images\seller\01.gif" />
+    <Content Include="Content\assets\images\seller\01.jpg" />
+    <Content Include="Content\assets\images\seller\01.png" />
+    <Content Include="Content\assets\images\seller\02.gif" />
+    <Content Include="Content\assets\images\seller\02.png" />
+    <Content Include="Content\assets\images\seller\03.gif" />
+    <Content Include="Content\assets\images\seller\03.png" />
+    <Content Include="Content\assets\images\seller\04.gif" />
+    <Content Include="Content\assets\images\seller\04.png" />
+    <Content Include="Content\assets\images\seller\05.gif" />
+    <Content Include="Content\assets\images\seller\05.png" />
+    <Content Include="Content\assets\images\seller\06.gif" />
+    <Content Include="Content\assets\images\seller\06.png" />
+    <Content Include="Content\assets\images\seller\07.gif" />
+    <Content Include="Content\assets\images\seller\07.png" />
+    <Content Include="Content\assets\images\seller\08.gif" />
+    <Content Include="Content\assets\images\seller\08.png" />
+    <Content Include="Content\assets\images\seller\09.gif" />
+    <Content Include="Content\assets\images\seller\09.png" />
+    <Content Include="Content\assets\images\seller\10.gif" />
+    <Content Include="Content\assets\images\seller\10.png" />
+    <Content Include="Content\assets\images\seller\11.png" />
+    <Content Include="Content\assets\images\seller\12.png" />
+    <Content Include="Content\assets\images\seller\13.png" />
+    <Content Include="Content\assets\images\seller\seller-icon.svg" />
+    <Content Include="Content\assets\images\Social Icons\discord%4060x60.png" />
+    <Content Include="Content\assets\images\Social Icons\Facebook%4060x60.png" />
+    <Content Include="Content\assets\images\Social Icons\Instagram%4060x60.png" />
+    <Content Include="Content\assets\images\Social Icons\Reddit%4060x60.png" />
+    <Content Include="Content\assets\images\Social Icons\Telegram%4060x60.png" />
+    <Content Include="Content\assets\images\Social Icons\Twitter%4060x60.png" />
+    <Content Include="Content\assets\images\sponsor\01.png" />
+    <Content Include="Content\assets\images\sponsor\02.png" />
+    <Content Include="Content\assets\images\sponsor\03.png" />
+    <Content Include="Content\assets\images\sponsor\04.png" />
+    <Content Include="Content\assets\images\sponsor\05.png" />
+    <Content Include="Content\assets\images\sponsor\06.png" />
+    <Content Include="Content\assets\images\Team Members\Art Santa_300 x 300.jpg" />
+    <Content Include="Content\assets\images\Team Members\Con Santa_300 x 300.jpg" />
+    <Content Include="Content\assets\images\Team Members\Mark Santa_300 x 300.jpg" />
+    <Content Include="Content\assets\images\Team Members\Rnd Santa_300 x 300.jpg" />
+    <Content Include="Content\assets\images\Team Members\Tech Santa_300 x 300.jpg" />
+    <Content Include="Content\assets\images\wallet\01.png" />
+    <Content Include="Content\assets\images\wallet\02.png" />
+    <Content Include="Content\assets\images\wallet\03.png" />
+    <Content Include="Content\assets\images\wallet\04.png" />
+    <Content Include="Content\assets\images\wallet\05.png" />
+    <Content Include="Content\assets\images\wallet\06.png" />
+    <Content Include="Content\assets\images\wallet\07.png" />
+    <Content Include="Content\assets\images\wallet\08.png" />
+    <Content Include="Content\assets\js\bootstrap.bundle.min.js" />
+    <Content Include="Content\assets\js\countdown.min.js" />
+    <Content Include="Content\assets\js\functions.js" />
+    <Content Include="Content\assets\js\isotope.pkgd.min.js" />
+    <Content Include="Content\assets\js\jquery-3.6.0.min.js" />
+    <Content Include="Content\assets\js\jquery.counterup.min.js" />
+    <Content Include="Content\assets\js\lightcase.js" />
+    <Content Include="Content\assets\js\swiper-bundle.min.js" />
+    <Content Include="Content\assets\js\waypoints.min.js" />
+    <Content Include="Content\assets\js\wow.min.js" />
+    <Content Include="Content\Common\bootstrap-theme.css" />
+    <Content Include="Content\Common\bootstrap-theme.min.css" />
+    <Content Include="Content\Common\bootstrap.css" />
+    <Content Include="Content\Common\bootstrap.min.css" />
+    <Content Include="Content\assets\images\logo\Logo.png" />
+    <Content Include="Content\Images\banner\RoyalSantaNFT_02.jpg" />
+    <Content Include="Content\Images\banner\RoyalSantaNFT_03.jpg" />
+    <Content Include="Content\Images\banner\RoyalSantaNFT_04.jpg" />
+    <Content Include="Content\Images\banner\RoyalSantaNFT_05.jpg" />
+    <Content Include="Content\Images\road-map\Donation.jpg" />
+    <Content Include="Content\Images\road-map\Gaming.jpg" />
+    <Content Include="Content\Images\road-map\Metaverse.jpg" />
+    <Content Include="Content\Images\team-member\Art Santa_340 x 340.jpg" />
+    <Content Include="Content\Images\team-member\Mark Santa_340 x 340.jpg" />
+    <Content Include="Content\Images\team-member\Tech Santa_340 x 340.jpg" />
+    <Content Include="Content\Scripts\Common\owl.carousel.min.js" />
+    <Content Include="Content\Scripts\Common\script.js" />
+    <Content Include="Content\Videos\Royal Santa_Landing Page_for web.mp4" />
+    <Content Include="favicon.ico" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Common\Site.css" />
+    <Content Include="Content\Scripts\Common\bootstrap.js" />
+    <Content Include="Content\Scripts\Common\bootstrap.min.js" />
+    <Content Include="Content\assets\css\fonts\icofont.eot" />
+    <Content Include="Content\assets\css\fonts\icofont.ttf" />
+    <Content Include="Content\assets\css\fonts\icofont.woff" />
+    <Content Include="Content\assets\css\fonts\icofont.woff2" />
+    <Content Include="Content\assets\css\style.min.css.map" />
+    <Content Include="Content\assets\fonts\lightcase.eot" />
+    <Content Include="Content\assets\fonts\lightcase.ttf" />
+    <Content Include="Content\assets\fonts\lightcase.woff" />
+    <Content Include="Content\assets\sass\style.scss" />
+    <Content Include="Content\assets\sass\sub-stylesheet\abstracts\_mixins.scss" />
+    <Content Include="Content\assets\sass\sub-stylesheet\abstracts\_variables.scss" />
+    <Content Include="Content\assets\sass\sub-stylesheet\base\_extend.scss" />
+    <Content Include="Content\assets\sass\sub-stylesheet\base\_fonts.scss" />
+    <Content Include="Content\assets\sass\sub-stylesheet\base\_typography.scss" />
+    <Content Include="Content\assets\sass\sub-stylesheet\base\_utilities.scss" />
+    <Content Include="Content\assets\sass\sub-stylesheet\components\_banner.scss" />
+    <Content Include="Content\assets\sass\sub-stylesheet\components\_blog.scss" />
+    <Content Include="Content\assets\sass\sub-stylesheet\components\_coming-soon.scss" />
+    <Content Include="Content\assets\sass\sub-stylesheet\components\_contact.scss" />
+    <Content Include="Content\assets\sass\sub-stylesheet\components\_error-page.scss" />
+    <Content Include="Content\assets\sass\sub-stylesheet\components\_footer.scss" />
+    <Content Include="Content\assets\sass\sub-stylesheet\components\_global.scss" />
+    <Content Include="Content\assets\sass\sub-stylesheet\components\_header.scss" />
+    <Content Include="Content\assets\sass\sub-stylesheet\components\_home.scss" />
+    <Content Include="Content\assets\sass\sub-stylesheet\components\_item-details.scss" />
+    <Content Include="Content\assets\sass\sub-stylesheet\components\_preloader.scss" />
+    <Content Include="Content\assets\sass\sub-stylesheet\components\_profile.scss" />
+    <Content Include="Content\assets\sass\sub-stylesheet\components\_registration.scss" />
+    <Content Include="Content\assets\sass\sub-stylesheet\components\_widget.scss" />
+    <Content Include="Content\assets\sass\sub-stylesheet\vendors\_normalize.scss" />
+    <Content Include="Content\assets\sass\sub-stylesheet\vendors\_rfs.scss" />
+    <None Include="Content\Scripts\Common\jquery-3.4.1.intellisense.js" />
+    <Content Include="Content\Scripts\Common\jquery-3.4.1.js" />
+    <Content Include="Content\Scripts\Common\jquery-3.4.1.min.js" />
+    <Content Include="Content\Scripts\Common\jquery-3.4.1.slim.js" />
+    <Content Include="Content\Scripts\Common\jquery-3.4.1.slim.min.js" />
+    <None Include="Content\Scripts\Common\jquery.validate-vsdoc.js" />
+    <Content Include="Content\Scripts\Common\jquery.validate.js" />
+    <Content Include="Content\Scripts\Common\jquery.validate.min.js" />
+    <Content Include="Content\Scripts\Common\jquery.validate.unobtrusive.js" />
+    <Content Include="Content\Scripts\Common\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Content\Scripts\Common\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Termsofuse.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\Common\bootstrap.min.css.map" />
+    <Content Include="Content\Common\bootstrap.css.map" />
+    <Content Include="Content\Common\bootstrap-theme.min.css.map" />
+    <Content Include="Content\Common\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Content\Scripts\Common\jquery-3.4.1.slim.min.map" />
+    <Content Include="Content\Scripts\Common\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55421</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44356/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
