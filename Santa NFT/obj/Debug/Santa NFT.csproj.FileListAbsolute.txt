@@ -154,3 +154,5 @@ F:\GitHub\Santa-NFT\Santa NFT\obj\Debug\Santa NFT.csproj.AssemblyReference.cache
 F:\GitHub\Santa-NFT\Santa NFT\obj\Debug\Santa NFT.csproj.CoreCompileInputs.cache
 F:\GitHub\Santa-NFT\Santa NFT\obj\Debug\Santa NFT.dll
 F:\GitHub\Santa-NFT\Santa NFT\obj\Debug\Santa NFT.pdb
+F:\GitHub\Santa-NFT\Santa NFT\bin\Dapper.dll
+F:\GitHub\Santa-NFT\Santa NFT\bin\Dapper.xml

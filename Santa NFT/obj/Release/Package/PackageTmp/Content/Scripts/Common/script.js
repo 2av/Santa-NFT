@@ -20,7 +20,7 @@
             "<i class='fa fa-caret-left'></i>",
             "<i class='fa fa-caret-right'></i>"
         ],
-        autoplay: true,
+        autoPlay: true,
         autoplayHoverPause: true,
         responsive: {
             0: {

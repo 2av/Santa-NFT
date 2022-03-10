@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿﻿
+<!DOCTYPE html>
 <html lang="en" class="no-js">
 
 <head>
@@ -23,7 +24,7 @@
     <link rel="stylesheet" href="~/Content/assets/css/animate.css">
     <link rel="stylesheet" href="~/Content/assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="~/Content/assets/css/style.min.css">
-    <link href="~/Content/Common/Site.css" rel="stylesheet" />
+    <link href="~/Content/Common/Site.css?v1" rel="stylesheet" />
     <!-- site title -->
     <title>Royal Santa</title>
 </head>
@@ -41,12 +42,15 @@
     <!-- preloader ending here -->
     <!-- ===============// header section start here \\================= -->
     <header class="header home-4">
-        <div class="container-fluid">
+        <div class="">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <a class="navbar-brand" href="/">
                     <img src="~/Content/assets/images/logo/logo.png" alt="logo">
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                @*<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>*@
+                <button class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -78,50 +82,50 @@
                     </ul>
                 </div>
                 <div class="social-part social-part-top  ps-lg-5">
-                                           
-                            <span class="btn btn-viewcollection">
-                                <a>VIEW COLLECTION</a>
-                            </span>
-                            <ul class="social-list d-flex flex-wrap align-items-center mb-0">
-                                <li class="social-link">
-                                    <a href="https://twitter.com/RoyalsantaNft" target="_blank" data-blast="bgColor">
-                                        <img src="~/Content/assets/images/Social Icons/Twitter@60x60.png" />
-                                    </a>
-                                </li>
-                                <li class="social-link">
-                                    <a href="https://www.reddit.com/user/Royalsantanft" target="_blank" data-blast="bgColor">
-                                        <img src="~/Content/assets/images/Social Icons/Reddit@60x60.png" />
-                                    </a>
-                                </li>
 
-                                <li class="social-link">
-                                    <a href="#" target="_blank" data-blast="bgColor">
-                                        <img src="~/Content/assets/images/Social Icons/Telegram@60x60.png" />
-                                    </a>
-                                </li>
-                                <li class="social-link">
-                                    <a href="https://www.instagram.com/royalsanta.nft" target="_blank" data-blast="bgColor">
-                                        @*<i class="icofont-instagram"></i>*@
-                                        <img src="~/Content/assets/images/Social Icons/Instagram@60x60.png" />
-                                    </a>
-                                </li>
+                    <span class="btn btn-viewcollection">
+                        <a href="https://opensea.io/collection/royalsantanft" target="_blank">VIEW COLLECTION</a>
+                    </span>
+                    <ul class="social-list d-flex flex-wrap align-items-center mb-0">
+                        <li class="social-link">
+                            <a href="https://twitter.com/RoyalsantaNft" target="_blank" data-blast="bgColor">
+                                <img src="~/Content/assets/images/Social Icons/Twitter@60x60.png" />
+                            </a>
+                        </li>
+                        <li class="social-link">
+                            <a href="https://www.reddit.com/r/RoyalSantaNFT" target="_blank" data-blast="bgColor">
+                                <img src="~/Content/assets/images/Social Icons/Reddit@60x60.png" />
+                            </a>
+                        </li>
+
+                        <li class="social-link">
+                            <a href="#" target="_blank" data-blast="bgColor">
+                                <img src="~/Content/assets/images/Social Icons/Telegram@60x60.png" />
+                            </a>
+                        </li>
+                        <li class="social-link">
+                            <a href="https://www.instagram.com/royalsantanft/" target="_blank" data-blast="bgColor">
+                                @*<i class="icofont-instagram"></i>*@
+                                <img src="~/Content/assets/images/Social Icons/Instagram@60x60.png" />
+                            </a>
+                        </li>
 
 
 
-                                <li class="social-link">
-                                    <a href="https://www.facebook.com/Royalsantanft" target="_blank" data-blast="bgColor">
-                                        @*<i class="icofont-facebook"></i>*@
-                                        <img src="~/Content/assets/images/Social Icons/Facebook@60x60.png" />
-                                    </a>
-                                </li>
-                                <li class="social-link">
-                                    <a href="https://discord.com/invite/HXXhbVjAQd" target="_blank" data-blast="bgColor">
-                                        <img src="~/Content/assets/images/Social Icons/discord@60x60.png" style=" max-width: 110%;"/>
-                                    </a>
-                                </li>
-                            </ul>
-                        
-                    
+                        <li class="social-link">
+                            <a href="https://www.facebook.com/nft.RoyalSanta/" target="_blank" data-blast="bgColor">
+                                @*<i class="icofont-facebook"></i>*@
+                                <img src="~/Content/assets/images/Social Icons/Facebook@60x60.png" />
+                            </a>
+                        </li>
+                        <li class="social-link">
+                            <a href="https://discord.com/invite/HXXhbVjAQd" target="_blank" data-blast="bgColor">
+                                <img src="~/Content/assets/images/Social Icons/discord@60x60.png" style=" max-width: 110%;" />
+                            </a>
+                        </li>
+                    </ul>
+
+
                 </div>
             </nav>
             <!--<div class="header__content">
@@ -244,7 +248,7 @@
                                         </a>
                                     </li>
                                     <li class="social-link">
-                                        <a href="https://www.reddit.com/user/Royalsantanft" target="_blank" data-blast="bgColor">
+                                        <a href="https://www.reddit.com/r/RoyalSantaNFT" target="_blank" data-blast="bgColor">
                                             <img src="~/Content/assets/images/Social Icons/Reddit@60x60.png" />
                                         </a>
                                     </li>
@@ -255,7 +259,7 @@
                                         </a>
                                     </li>
                                     <li class="social-link">
-                                        <a href="https://www.instagram.com/royalsanta.nft" target="_blank" data-blast="bgColor">
+                                        <a href="https://www.instagram.com/royalsantanft/" target="_blank" data-blast="bgColor">
                                             @*<i class="icofont-instagram"></i>*@
                                             <img src="~/Content/assets/images/Social Icons/Instagram@60x60.png" />
                                         </a>
@@ -264,7 +268,7 @@
 
 
                                     <li class="social-link">
-                                        <a href="https://www.facebook.com/Royalsantanft" target="_blank" data-blast="bgColor">
+                                        <a href="https://www.facebook.com/nft.RoyalSanta/" target="_blank" data-blast="bgColor">
                                             @*<i class="icofont-facebook"></i>*@
                                             <img src="~/Content/assets/images/Social Icons/Facebook@60x60.png" />
                                         </a>

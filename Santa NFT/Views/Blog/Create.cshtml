@@ -1,0 +1,124 @@
+﻿@model Santa_NFT.Models.Blog
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<head>
+    <script src="~/Content/Theme/Admin/plugins/ckeditor/ckeditor.js"></script>
+</head>
+<div class="container">
+    <div class="row">
+        <input type="hidden" id="BlogId" value="@Model.BlogId" />
+        <div class="col-md-4 col-sm-12">
+            <div class="form-group">
+                <label for="username">Blog Title</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="BlogTitle" placeholder="Enter Blog Title" value="@Model.BlogTitle" />
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <div class="form-group">
+                <label for="username">Blog Category</label>
+                <div class="input-group mb-3">
+                    <select class="form-control" id="BlogCategoryId" data-value="@Model.BlogCategoryId">
+                        <option value="0">Select</option>
+                        @foreach (var item in ViewBag.BlogCategory)
+                        {
+                            <option value="@item.BlogCategoryId">@item.BlogCategoryName</option>
+                        }
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <div class="form-group">
+                <label for="username">Display Order</label>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control" id="DisplayOrder" placeholder="Enter Display Order" value="@Model.DisplayOrder" />
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 col-sm-12">
+            <div class="form-group">
+                <label for="username">Blog Descriptions</label>
+                <textarea class="form-control" id="BlogDescriptions">@Model.BlogDescriptions</textarea>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="file-upload">
+                <div class="file-select">
+                    <div class="file-select-button" id="fileName">Choose File</div>
+                    <div class="file-select-name" id="noFile">No file chosen...</div>
+                    <input type="file" name="chooseFile" id="_BlogBanner" onchange="UploadFile('_BlogBanner', 'BlogBanner', 'all')">
+                    <input type="hidden" value="@Model.BlogBanner" id="BlogBanner" />
+                </div>
+                <div class="error-message" style="color:red"></div>
+                <div class="filename">
+
+                </div>
+            </div>
+            @if (!string.IsNullOrEmpty(Model.BlogBanner))
+            {
+                <img src="~/Uploads/@Model.BlogBanner" style="width:100%"/>
+            }
+        </div>
+        <br /><br />
+        <button class="btn btn-success" onclick="SaveBlog()">Save</button>
+
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        CKEDITOR.replace('BlogDescriptions', {
+            fullPage: true,
+            extraPlugins: 'docprops',
+            allowedContent: true,
+            height: 320
+        });
+
+        $("#BlogCategoryId").val($("#BlogCategoryId").attr("data-value"));
+
+
+    });
+    function SaveBlog() {
+        debugger;
+        var data = {
+            BlogId: $("#BlogId").val(),
+            BlogTitle: $("#BlogTitle").val(),
+            BlogDescriptions: CKEDITOR.instances.BlogDescriptions.getData(),
+            DisplayOrder: $("#DisplayOrder").val(),
+            BlogCategoryId: $("#BlogCategoryId").val(),
+            BlogBanner: $("#BlogBanner").val()
+        }
+        if (data.BlogTitle == "") {
+            //popupV1('Please Enter Blog Title', "Message", "");
+            alert('Please Enter Blog Title');
+            return;
+        }
+        if (data.BlogDescriptions == "") {
+            //popupV1('Please Enter Blog Description', "Message", "");
+            alert('Please Enter Blog Description');
+            return;
+        }
+
+        if (data.BlogCategoryId == "0") {
+            //popupV1('Please Select Blog Category', "Message", "");
+            alert('Please Select Blog Category');
+            return;
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "/Blog/SaveData",
+            data: JSON.stringify(data),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                alert(data);
+                location.reload();
+            }
+        });
+
+    }
+</script>

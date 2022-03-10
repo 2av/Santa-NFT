@@ -1,0 +1,386 @@
+﻿@model List<Santa_NFT.Models.Blog>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<Santa_NFT.Models.BlogCategory> listBlogCategory = new Santa_NFT.Models.Repository.BlogCategoryRepository().GetAll();
+}
+<head>
+
+</head>
+<section>
+    <div class="container">
+        <div class="blog-wrap">
+            <div class="row">
+                <div class="col-md-8">
+                    @foreach (var item in Model)
+                    {
+                        <div class="thumbnail-wrap">
+                            <div class="thumbnail">
+                                <div class="thumbnail-img">
+                                    @if (!string.IsNullOrEmpty(item.BlogBanner))
+                                    {
+                                        <img class="img-responsive" src="~/Uploads/@item.BlogBanner" alt="dummyimage" />
+                                    }
+
+                                </div>
+                                <div class="caption">
+                                    @*<button class="btn btn-xs"> Charity</button>*@
+                                    <h3>@item.BlogTitle</h3>
+                                    <date>@item.CreatedDate</date>
+                                    <p>@Html.Raw(item.BlogDescriptions)</p>
+                                    <div class="thumbnail-btm">
+                                        <div class="thumbnail-user">
+                                            <img src="~/Content/Images/defaultuser.png" />
+                                            <a href="#">by Hetmayar</a>
+                                        </div>
+                                        <div class="readMore">
+                                            <a href="#">Read More.....</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+                </div>
+                <div class="col-md-4">
+                    @*<div class="left-panel SearchObjects">
+                            <h2 class="heading">
+                                <span class="said-line-1"></span>
+                                <span class="said-line-2"></span>
+                                <span class="Main-Heading">Search Objects</span>
+                            </h2>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="exampleInputAmount" placeholder="Search your keyword...">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>*@
+                    <div class="left-panel Follow">
+                        <h2 class="heading">
+                            <span class="said-line-1"></span>
+                            <span class="said-line-2"></span>
+                            <span class="Main-Heading">Follow</span>
+                        </h2>
+                        <div class="social">
+                            <ul>
+                                <li class="facebook">
+                                    <a href="#">
+                                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li class="Twitter">
+                                    <a href="#">
+                                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li class="google">
+                                    <a href="#">
+                                        <i class="fa fa-google-plus" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li class="Be">
+                                    <a href="#">
+                                        <i class="fa fa-behance" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li class="last">
+                                    <a href="#">
+                                        <i class="fa fa-behance" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="left-panel user-group">
+                        <h2 class="heading">
+                            <span class="said-line-1"></span>
+                            <span class="said-line-2"></span>
+                            <span class="Main-Heading">Popular Feeds</span>
+                        </h2>
+                        <div class="user-wrap">
+                            <div class="user-img">
+                                <img src="~/Content/Images/defaultuser.png" />
+                            </div>
+                            <div class="user-content">
+                                <p>
+                                    Lorem ipsum dolor sit
+                                    cing elit, sed do.
+                                </p>
+                                <date>24th March 2019</date>
+                            </div>
+                        </div>
+                        <div class="user-wrap">
+                            <div class="user-img">
+                                <img src="~/Content/Images/defaultuser.png" />
+                            </div>
+                            <div class="user-content">
+                                <p>
+                                    Lorem ipsum dolor sit
+                                    cing elit, sed do.
+                                </p>
+                                <date>24th March 2019</date>
+                            </div>
+                        </div>
+                        <div class="user-wrap">
+                            <div class="user-img">
+                                <img src="~/Content/Images/defaultuser.png" />
+                            </div>
+                            <div class="user-content">
+                                <p>
+                                    Lorem ipsum dolor sit
+                                    cing elit, sed do.
+                                </p>
+                                <date>24th March 2019</date>
+                            </div>
+                        </div>
+                        <div class="user-wrap">
+                            <div class="user-img">
+                                <img src="~/Content/Images/defaultuser.png" />
+                            </div>
+                            <div class="user-content">
+                                <p>
+                                    Lorem ipsum dolor sit
+                                    cing elit, sed do.
+                                </p>
+                                <date>24th March 2019</date>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="left-panel Categories">
+                        <h2 class="heading">
+                            <span class="said-line-1"></span>
+                            <span class="said-line-2"></span>
+                            <span class="Main-Heading">Categories</span>
+                        </h2>
+                        @foreach (var blogCategory in listBlogCategory)
+                        {
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="@blogCategory.BlogCategoryName" readonly="readonly">
+                                <div class="input-group-addon">@blogCategory.BlogCategoryName</div>
+                            </div>
+
+
+                        }
+
+
+
+                    </div>
+
+                    <div class="left-panel PopularTags">
+                        <h2 class="heading">
+                            <span class="said-line-1"></span>
+                            <span class="said-line-2"></span>
+                            <span class="Main-Heading">Popular Tags</span>
+                        </h2>
+                        <div class="PopularTags-btn">
+                            <ul>
+                                <li><a href="#">Popular</a></li>
+                                <li><a href="#">desgin</a></li>
+                                <li><a href="#">ux</a></li>
+                                <li><a href="#">usability</a></li>
+                                <li><a href="#">develop</a></li>
+                                <li><a href="#">icon</a></li>
+                                <li><a href="#">business</a></li>
+                                <li><a href="#">consult</a></li>
+                                <li><a href="#">kit</a></li>
+                                <li><a href="#">keyboard</a></li>
+                                <li><a href="#">mouse</a></li>
+                                <li><a href="#">tech</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="leftbanner">
+                        <img src="https://dummyimage.com/350x600" class="img-responsive" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--<div class="thumbnail">
+            <div class="thumbnail-img">
+                <img class="img-responsive" src="https://dummyimage.com/770x460" alt="dummyimage">
+                <div class="playBtn">
+                    <a href="#">
+                        <i class="fa fa-play" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="caption">
+                <button class="btn btn-xs"> Charity</button>
+                <h3>
+                    Adipisicing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore.
+                </h3>
+                <date> 24th March 2019</date>
+
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidid unt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repreh enderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                </p>
+                <div class="thumbnail-btm">
+                    <div class="thumbnail-user">
+                        <img src="~/Content/Images/defaultuser.png" />
+                        <a href="#">by Hetmayar</a>
+                    </div>
+                    <div class="readMore">
+                        <a href="#">Read More.....</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="thumbnail">
+            <div class="thumbnail-img">
+                <img class="img-responsive" src="https://dummyimage.com/770x460" alt="dummyimage">-->
+        @*<div class="playBtn">
+                <a href="#">
+                    <i class="fa fa-play" aria-hidden="true"></i>
+                </a>
+            </div>*@
+        <!--</div>
+            <div class="caption">
+                <button class="btn btn-xs"> Charity</button>
+                <h3>
+                    Magna aliqua. Ut enim ad minim venia
+                    m, quis nostrud exercitation ullamco
+                </h3>
+                <date> 24th March 2019</date>
+
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidid unt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repreh enderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                </p>
+                <div class="thumbnail-btm">
+                    <div class="thumbnail-user">
+                        <img src="~/Content/Images/defaultuser.png" />
+                        <a href="#">by Hetmayar</a>
+                    </div>
+                    <div class="readMore">
+                        <a href="#">Read More.....</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="thumbnailBanner">
+            <img class="img-responsive" src="~/Content/Images/our-process.jpg" height="90" />
+        </div>-->
+        <!--<div class="row">
+        <h1 class="heading">Blog Coming Soon</h1>
+        <div class="headul"></div>
+        <p class="subheading">Opportunity is missed by most people because it is dressed in overalls and looks like work.</p>-->
+        @*<!-- Blog - Start -->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 blog blog_small blog_left">
+                <div class="row">
+                    <!-- Blog Image - Start -->
+                    <div class=" col-lg-4 col-md-4 col-sm-5 col-xs-5  pic inviewport animated delay1" data-effect="fadeIn">
+                        <img alt="blog-image" class="img-responsive" src="img/blog-small-1.jpg">
+                    </div>
+                    <!-- Blog Image - End -->
+                    <!-- Blog Info - Start -->
+                    <div class="col-lg-8 col-md-8 col-sm-7 col-xs-7 inviewport animated delay1" data-effect="fadeIn">
+                        <div class="info">
+                            <span class="date">24th August 2015</span>
+                            <h4 class="title"><a href="blog-single.html">Ten amazing and strange pictures by professionals</a></h4>
+                            <p>Donec pede justo, fringilla, aliquet nec, vulputatee egerdiet erdiett arcu. In  justo, rhoncus ut, imperdiet a, venenatis vitaerdiet erde justo. llam dictum felis eu pede mollis pretium diet a, venenatis vita sto. Nullam dictum felis eu pede mollis pretiumdiet...</p>
+                            <a class="btn btn-primary text-on-primary" href="blog-single.html">Read More</a>
+                        </div>
+                    </div>
+                    <!-- Blog Info - End -->
+                </div>
+            </div>
+                @*
+            <!-- Blog - End -->
+            <!-- Blog - Start -->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 blog blog_small blog_right">
+                <div class="row">
+                    <!-- Blog Image - Start -->
+                    <div class=" col-lg-4 col-md-4 col-sm-5 col-xs-5  pic inviewport animated delay1" data-effect="fadeIn">
+                        <img alt="blog-image" class="img-responsive" src="img/blog-small-2.jpg">
+                    </div>
+                    <!-- Blog Image - End -->
+                    <!-- Blog Info - Start -->
+                    <div class="col-lg-8 col-md-8 col-sm-7 col-xs-7 inviewport animated delay1" data-effect="fadeIn">
+                        <div class="info">
+                            <span class="date">24th August 2015</span>
+                            <h4 class="title"><a href="blog-single.html">Ten amazing and strange pictures by professionals</a></h4>
+                            <p>Donec pede justo, fringilla, aliquet nec, vulputatee egerdiet erdiett arcu. In  justo, rhoncus ut, imperdiet a, venenatis vitaerdiet erde justo. llam dictum felis eu pede mollis pretium diet a, venenatis vita sto. Nullam dictum felis eu pede mollis pretiumdiet...</p>
+                            <a class="btn btn-primary text-on-primary" href="blog-single.html">Read More</a>
+                        </div>
+                    </div>
+                    <!-- Blog Info - End -->
+                </div>
+            </div>
+            <!-- Blog - End -->
+            <!-- Blog - Start -->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 blog blog_small blog_left">
+                <div class="row">
+                    <!-- Blog Image - Start -->
+                    <div class=" col-lg-4 col-md-4 col-sm-5 col-xs-5  pic inviewport animated delay1" data-effect="fadeIn">
+                        <img alt="blog-image" class="img-responsive" src="img/blog-small-3.jpg">
+                    </div>
+                    <!-- Blog Image - End -->
+                    <!-- Blog Info - Start -->
+                    <div class="col-lg-8 col-md-8 col-sm-7 col-xs-7 inviewport animated delay1" data-effect="fadeIn">
+                        <div class="info">
+                            <span class="date">24th August 2015</span>
+                            <h4 class="title"><a href="blog-single.html">Ten amazing and strange pictures by professionals</a></h4>
+                            <p>Donec pede justo, fringilla, aliquet nec, vulputatee egerdiet erdiett arcu. In  justo, rhoncus ut, imperdiet a, venenatis vitaerdiet erde justo. llam dictum felis eu pede mollis pretium diet a, venenatis vita sto. Nullam dictum felis eu pede mollis pretiumdiet...</p>
+                            <a class="btn btn-primary text-on-primary" href="blog-single.html">Read More</a>
+                        </div>
+                    </div>
+                    <!-- Blog Info - End -->
+                </div>
+            </div>
+            <!-- Blog - End -->
+            <!-- Blog - Start -->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 blog blog_small blog_right">
+                <div class="row">
+                    <!-- Blog Image - Start -->
+                    <div class=" col-lg-4 col-md-4 col-sm-5 col-xs-5  pic inviewport animated delay1" data-effect="fadeIn">
+                        <img alt="blog-image" class="img-responsive" src="img/blog-small-4.jpg">
+                    </div>
+                    <!-- Blog Image - End -->
+                    <!-- Blog Info - Start -->
+                    <div class="col-lg-8 col-md-8 col-sm-7 col-xs-7 inviewport animated delay1" data-effect="fadeIn">
+                        <div class="info">
+                            <span class="date">24th August 2015</span>
+                            <h4 class="title"><a href="blog-single.html">Ten amazing and strange pictures by professionals</a></h4>
+                            <p>Donec pede justo, fringilla, aliquet nec, vulputatee egerdiet erdiett arcu. In  justo, rhoncus ut, imperdiet a, venenatis vitaerdiet erde justo. llam dictum felis eu pede mollis pretium diet a, venenatis vita sto. Nullam dictum felis eu pede mollis pretiumdiet...</p>
+                            <a class="btn btn-primary text-on-primary" href="blog-single.html">Read More</a>
+                        </div>
+                    </div>
+                    <!-- Blog Info - End -->
+                </div>
+            </div>
+            <!-- Blog - End -->*@
+        <!--</div>-->
+        @*<div class="row">
+                <div class="col-xs-12 blog_pagination blog_small">
+                    <ul class="pagination">
+                        <li><a href="#">&laquo;</a></li>
+                        <li><a href="#">1</a></li>
+                        <li class="active"><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">&raquo;</a></li>
+                    </ul>
+                </div>
+            </div>*@
+
+
+    </div>
+
+    </div>
+</section>
+
+<script>
+    $(document).ready(function () {
+        setTimeout(function () {
+            // $(".menulistforhide").hide();
+        }, 800);
+
+    });
+</script>
