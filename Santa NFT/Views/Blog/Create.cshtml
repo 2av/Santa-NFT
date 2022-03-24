@@ -41,6 +41,12 @@
         </div>
         <div class="col-md-12 col-sm-12">
             <div class="form-group">
+                <label for="username">Blog Short Descriptions</label>
+                <textarea class="form-control" id="BlogShortDescriptions">@Model.BlogShortDescriptions</textarea>
+            </div>
+        </div>
+        <div class="col-md-12 col-sm-12">
+            <div class="form-group">
                 <label for="username">Blog Descriptions</label>
                 <textarea class="form-control" id="BlogDescriptions">@Model.BlogDescriptions</textarea>
             </div>
@@ -70,13 +76,18 @@
 </div>
 <script>
     $(document).ready(function () {
+        CKEDITOR.replace('BlogShortDescriptions', {
+            fullPage: true,
+            extraPlugins: 'docprops',
+            allowedContent: true,
+            height: 320
+        });
         CKEDITOR.replace('BlogDescriptions', {
             fullPage: true,
             extraPlugins: 'docprops',
             allowedContent: true,
             height: 320
         });
-
         $("#BlogCategoryId").val($("#BlogCategoryId").attr("data-value"));
 
 
@@ -86,6 +97,7 @@
         var data = {
             BlogId: $("#BlogId").val(),
             BlogTitle: $("#BlogTitle").val(),
+            BlogShortDescriptions: CKEDITOR.instances.BlogShortDescriptions.getData(),
             BlogDescriptions: CKEDITOR.instances.BlogDescriptions.getData(),
             DisplayOrder: $("#DisplayOrder").val(),
             BlogCategoryId: $("#BlogCategoryId").val(),

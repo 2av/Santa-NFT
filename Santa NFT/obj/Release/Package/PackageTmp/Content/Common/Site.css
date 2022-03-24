@@ -717,19 +717,22 @@ section {
     /* Blog*/
     .blog-wrap {
         padding-top: 100px;
-        margin-top: 160px;
+        margin-top: 57px;
     }
 
         .blog-wrap .thumbnail {
             padding: 0px;
         }
-        .blog-wrap .thumbnail-wrap{
-            border:2px solid white;
-            margin-bottom:25px;
+        .blog-wrap .thumbnail-wrap {
+            border: solid 1px #f3a735;
+            margin-bottom: 25px;
         }
 
         .blog-wrap .thumbnail .thumbnail-img {
             position: relative;
+        }
+        .blog-wrap .thumbnail .caption h3 {
+            color: #f3a735;
         }
 
                 .blog-wrap .thumbnail .thumbnail-img .playBtn {
@@ -798,7 +801,7 @@ section {
         }
 
     .left-panel {
-        border: solid 2px #ededed;
+        border: solid 1px #f3a735;
         padding: 36px;
         margin-bottom: 25px;
     }
@@ -806,6 +809,8 @@ section {
         .left-panel .heading {
             display: flex;
             align-items: center;
+            margin-bottom: 12px;
+        
         }
 
             .left-panel .heading span {
@@ -829,7 +834,7 @@ section {
 
             .left-panel .heading .Main-Heading {
                 font-size: 22px;
-                color: #202426;
+                color: #f3a735;
                 text-transform: capitalize;
                 letter-spacing: 0px;
                 padding-left: 15px;
@@ -895,9 +900,9 @@ section {
     }
 
         .user-group .user-wrap .user-img img {
-            width: 80px;
-            height: 80px;
-            border-radius: 360px;
+            width: 62px;
+            height: 50px;
+            border-radius: 50%;
             transition: 2s all;
         }
 
@@ -907,11 +912,11 @@ section {
 
             .user-group .user-wrap .user-content p {
                 line-height: normal;
-                color: #202426;
+                color: white;
             }
 
             .user-group .user-wrap .user-content date {
-                color: #00baa3;
+                color: rgb(3,352,254);
             }
 
     .left-panel.Categories .input-group {
@@ -924,11 +929,10 @@ section {
     }
 
     .left-panel.Categories .input-group-addon {
-        background: #e3e3e3;
+        background: #f3a733;
         border-color: #e3e3e3;
         padding: 18px 20px;
     }
-
     .PopularTags .PopularTags-btn ul {
         display: flex;
         flex-flow: wrap;

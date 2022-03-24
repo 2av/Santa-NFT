@@ -14,6 +14,7 @@ namespace Santa_NFT.Controllers
         public ActionResult Index()
         {
             BlogRepository repo = new BlogRepository();
+            ViewBag.BlogCategoryCount = repo.GetBlogCategoryCount();
             return View(repo.GetAll());
         }
         public ActionResult ListAll()
@@ -39,6 +40,12 @@ namespace Santa_NFT.Controllers
         public ActionResult SaveData(Blog obj)
         {
             return Json(new BlogRepository().AddOrUpdate(obj));
+        }
+        public ActionResult Details(string id)
+        {
+            BlogRepository repo = new BlogRepository();
+            ViewBag.BlogCategoryCount = repo.GetBlogCategoryCount();
+            return View(repo.Get(Convert.ToInt32(id)));
         }
     }
 }

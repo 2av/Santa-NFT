@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    List<Santa_NFT.Models.BlogCategory> listBlogCategory = new Santa_NFT.Models.Repository.BlogCategoryRepository().GetAll();
+    List<Santa_NFT.Models.ViewModel.vmBlogCategoryCount> lstBlogCount = ViewBag.BlogCategoryCount;
 }
 <head>
 
@@ -27,14 +27,15 @@
                                     @*<button class="btn btn-xs"> Charity</button>*@
                                     <h3>@item.BlogTitle</h3>
                                     <date>@item.CreatedDate</date>
-                                    <p>@Html.Raw(item.BlogDescriptions)</p>
+                                    @*<div><p>@Html.Raw(item.BlogDescriptions.Substring(0, (item.BlogDescriptions.Length>500)?500: item.BlogDescriptions.Length))</p></div>*@
+                                    <div>@Html.Raw(item.BlogShortDescriptions)</div>
                                     <div class="thumbnail-btm">
                                         <div class="thumbnail-user">
-                                            <img src="~/Content/Images/defaultuser.png" />
+                                            <img src="~/Content/Images/defaultuser.png" style="display:none" />
                                             <a href="#">by Hetmayar</a>
                                         </div>
                                         <div class="readMore">
-                                            <a href="#">Read More.....</a>
+                                            <a href="/Blog/Details/@item.BlogId" target="_blank">Read More.....</a>
                                         </div>
                                     </div>
                                 </div>
@@ -57,42 +58,7 @@
                                 </div>
                             </div>
                         </div>*@
-                    <div class="left-panel Follow">
-                        <h2 class="heading">
-                            <span class="said-line-1"></span>
-                            <span class="said-line-2"></span>
-                            <span class="Main-Heading">Follow</span>
-                        </h2>
-                        <div class="social">
-                            <ul>
-                                <li class="facebook">
-                                    <a href="#">
-                                        <i class="fa fa-facebook" aria-hidden="true"></i>
-                                    </a>
-                                </li>
-                                <li class="Twitter">
-                                    <a href="#">
-                                        <i class="fa fa-twitter" aria-hidden="true"></i>
-                                    </a>
-                                </li>
-                                <li class="google">
-                                    <a href="#">
-                                        <i class="fa fa-google-plus" aria-hidden="true"></i>
-                                    </a>
-                                </li>
-                                <li class="Be">
-                                    <a href="#">
-                                        <i class="fa fa-behance" aria-hidden="true"></i>
-                                    </a>
-                                </li>
-                                <li class="last">
-                                    <a href="#">
-                                        <i class="fa fa-behance" aria-hidden="true"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                    
                     <div class="left-panel user-group">
                         <h2 class="heading">
                             <span class="said-line-1"></span>
@@ -123,30 +89,7 @@
                                 <date>24th March 2019</date>
                             </div>
                         </div>
-                        <div class="user-wrap">
-                            <div class="user-img">
-                                <img src="~/Content/Images/defaultuser.png" />
-                            </div>
-                            <div class="user-content">
-                                <p>
-                                    Lorem ipsum dolor sit
-                                    cing elit, sed do.
-                                </p>
-                                <date>24th March 2019</date>
-                            </div>
-                        </div>
-                        <div class="user-wrap">
-                            <div class="user-img">
-                                <img src="~/Content/Images/defaultuser.png" />
-                            </div>
-                            <div class="user-content">
-                                <p>
-                                    Lorem ipsum dolor sit
-                                    cing elit, sed do.
-                                </p>
-                                <date>24th March 2019</date>
-                            </div>
-                        </div>
+                       
                     </div>
 
                     <div class="left-panel Categories">
@@ -155,14 +98,12 @@
                             <span class="said-line-2"></span>
                             <span class="Main-Heading">Categories</span>
                         </h2>
-                        @foreach (var blogCategory in listBlogCategory)
+                        @foreach (var blogCategory in lstBlogCount)
                         {
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="@blogCategory.BlogCategoryName" readonly="readonly">
-                                <div class="input-group-addon">@blogCategory.BlogCategoryName</div>
+                                <div class="input-group-addon">@blogCategory.TotalCount</div>
                             </div>
-
-
                         }
 
 
@@ -373,14 +314,15 @@
 
     </div>
 
-    </div>
+    
 </section>
-
+<script src="~/Content/assets/js/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function () {
         setTimeout(function () {
             // $(".menulistforhide").hide();
         }, 800);
+        $("#navbarSupportedContent").css("visibility", "hidden");
 
     });
 </script>

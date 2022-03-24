@@ -129,6 +129,7 @@ F:\GitHub\Santa-NFT\Santa NFT\bin\roslyn\vbc.rsp
 F:\GitHub\Santa-NFT\Santa NFT\bin\roslyn\VBCSCompiler.exe
 F:\GitHub\Santa-NFT\Santa NFT\bin\roslyn\VBCSCompiler.exe.config
 F:\GitHub\Santa-NFT\Santa NFT\bin\Antlr3.Runtime.dll
+F:\GitHub\Santa-NFT\Santa NFT\bin\Dapper.dll
 F:\GitHub\Santa-NFT\Santa NFT\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 F:\GitHub\Santa-NFT\Santa NFT\bin\Microsoft.Web.Infrastructure.dll
 F:\GitHub\Santa-NFT\Santa NFT\bin\Newtonsoft.Json.dll
@@ -140,6 +141,7 @@ F:\GitHub\Santa-NFT\Santa NFT\bin\System.Web.WebPages.Deployment.dll
 F:\GitHub\Santa-NFT\Santa NFT\bin\System.Web.WebPages.dll
 F:\GitHub\Santa-NFT\Santa NFT\bin\System.Web.WebPages.Razor.dll
 F:\GitHub\Santa-NFT\Santa NFT\bin\WebGrease.dll
+F:\GitHub\Santa-NFT\Santa NFT\bin\Dapper.xml
 F:\GitHub\Santa-NFT\Santa NFT\bin\System.Web.Helpers.xml
 F:\GitHub\Santa-NFT\Santa NFT\bin\System.Web.Mvc.xml
 F:\GitHub\Santa-NFT\Santa NFT\bin\System.Web.Optimization.xml
@@ -154,5 +156,3 @@ F:\GitHub\Santa-NFT\Santa NFT\obj\Debug\Santa NFT.csproj.AssemblyReference.cache
 F:\GitHub\Santa-NFT\Santa NFT\obj\Debug\Santa NFT.csproj.CoreCompileInputs.cache
 F:\GitHub\Santa-NFT\Santa NFT\obj\Debug\Santa NFT.dll
 F:\GitHub\Santa-NFT\Santa NFT\obj\Debug\Santa NFT.pdb
-F:\GitHub\Santa-NFT\Santa NFT\bin\Dapper.dll
-F:\GitHub\Santa-NFT\Santa NFT\bin\Dapper.xml

@@ -41,7 +41,6 @@
                         <thead>
                             <tr>
                                 <th>Title</th>
-                                <th>Descriptions</th>
                                 <th>Display Order</th>
                                 <th>Edit</th>
 
@@ -50,7 +49,6 @@
                         <tfoot>
                             <tr>
                                 <th>Title</th>
-                                <th>Descriptions</th>
                                 <th>Display Order</th>
                                 <th>Edit</th>
                             </tr>
@@ -62,7 +60,7 @@
                                 {
                                     <tr>
                                         <td>@item.BlogTitle</td>
-                                        <td>@Html.Raw(item.BlogDescriptions)</td>
+                                  
                                         <td>@item.DisplayOrder</td>
                                         <td><a href="/Blog/Create/@item.BlogId">Edit</a></td>
                                     </tr>

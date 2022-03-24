@@ -50,14 +50,14 @@ namespace Santa_NFT.Controllers
                         string savefname = Path.Combine(Server.MapPath(path), Newfilename);
                         file.SaveAs(savefname);
 
-                        FileManager objfile = new FileManager();
-                        objfile.FileGuid = Newfilename;
-                        objfile.FileName = fname;
-                        objfile.FilePath = path;
-                        objfile.FileExtension = FileExtension;
-                        objfile.FileSize = (file.ContentLength / 1024f) / 1024f;
-                        objfile.UploadFrom = "";
-                        objfile.UploadedBy = Convert.ToInt32(GlobalFunctions.GetCookie("UserID"));
+                        //FileManager objfile = new FileManager();
+                        //objfile.FileGuid = Newfilename;
+                        //objfile.FileName = fname;
+                        //objfile.FilePath = path;
+                        //objfile.FileExtension = FileExtension;
+                        //objfile.FileSize = (file.ContentLength / 1024f) / 1024f;
+                        //objfile.UploadFrom = "";
+                        //objfile.UploadedBy = Convert.ToInt32(GlobalFunctions.GetCookie("UserID"));
 
                         //string msg = objfile._Insert("procFileManager", objfile);
                     }

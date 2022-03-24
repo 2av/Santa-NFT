@@ -11,6 +11,7 @@ namespace Santa_NFT.Models
 
         public string BlogTitle { get; set; }
 
+        public string BlogShortDescriptions { get; set; }
         public string BlogDescriptions { get; set; }
 
         public int? BlogCategoryId { get; set; }

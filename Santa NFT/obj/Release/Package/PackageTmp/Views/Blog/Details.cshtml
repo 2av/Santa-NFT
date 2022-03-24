@@ -1,0 +1,153 @@
+﻿@model Santa_NFT.Models.Blog
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<Santa_NFT.Models.ViewModel.vmBlogCategoryCount> lstBlogCount = ViewBag.BlogCategoryCount;
+}
+<head>
+
+</head>
+<section>
+    <div class="container">
+        <div class="blog-wrap">
+            <div class="row">
+                <div class="col-md-8">
+                    
+                        <div class="thumbnail-wrap">
+                            <div class="thumbnail">
+                                <div class="thumbnail-img">
+                                    @if (!string.IsNullOrEmpty(Model.BlogBanner))
+                                    {
+                                        <img class="img-responsive" src="~/Uploads/@Model.BlogBanner" alt="dummyimage" />
+                                    }
+
+                                </div>
+                                <div class="caption">
+                                    @*<button class="btn btn-xs"> Charity</button>*@
+                                    <h3>@Model.BlogTitle</h3>
+                                    <date>@Model.CreatedDate</date>
+                                    @*<div><p>@Html.Raw(item.BlogDescriptions.Substring(0, (item.BlogDescriptions.Length>500)?500: item.BlogDescriptions.Length))</p></div>*@
+                                    <div>@Html.Raw(Model.BlogDescriptions)</div>
+                                    <div class="thumbnail-btm">
+                                        <div class="thumbnail-user">
+                                            <img src="~/Content/Images/defaultuser.png" style="display:none" />
+                                            <a href="#">by Hetmayar</a>
+                                        </div>
+                                        @*<div class="readMore">
+                                            <a href="/Blog/Details/@item.BlogId">Read More.....</a>
+                                        </div>*@
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                  
+                </div>
+                <div class="col-md-4">
+                    @*<div class="left-panel SearchObjects">
+                            <h2 class="heading">
+                                <span class="said-line-1"></span>
+                                <span class="said-line-2"></span>
+                                <span class="Main-Heading">Search Objects</span>
+                            </h2>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="exampleInputAmount" placeholder="Search your keyword...">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>*@
+
+                    <div class="left-panel user-group">
+                        <h2 class="heading">
+                            <span class="said-line-1"></span>
+                            <span class="said-line-2"></span>
+                            <span class="Main-Heading">Popular Feeds</span>
+                        </h2>
+                        <div class="user-wrap">
+                            <div class="user-img">
+                                <img src="~/Content/Images/defaultuser.png" />
+                            </div>
+                            <div class="user-content">
+                                <p>
+                                    Lorem ipsum dolor sit
+                                    cing elit, sed do.
+                                </p>
+                                <date>24th March 2019</date>
+                            </div>
+                        </div>
+                        <div class="user-wrap">
+                            <div class="user-img">
+                                <img src="~/Content/Images/defaultuser.png" />
+                            </div>
+                            <div class="user-content">
+                                <p>
+                                    Lorem ipsum dolor sit
+                                    cing elit, sed do.
+                                </p>
+                                <date>24th March 2019</date>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="left-panel Categories">
+                        <h2 class="heading">
+                            <span class="said-line-1"></span>
+                            <span class="said-line-2"></span>
+                            <span class="Main-Heading">Categories</span>
+                        </h2>
+                        @foreach (var blogCategory in lstBlogCount)
+                        {
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="@blogCategory.BlogCategoryName" readonly="readonly">
+                                <div class="input-group-addon">@blogCategory.TotalCount</div>
+                            </div>
+                        }
+
+
+
+                    </div>
+
+                    <div class="left-panel PopularTags">
+                        <h2 class="heading">
+                            <span class="said-line-1"></span>
+                            <span class="said-line-2"></span>
+                            <span class="Main-Heading">Popular Tags</span>
+                        </h2>
+                        <div class="PopularTags-btn">
+                            <ul>
+                                <li><a href="#">Popular</a></li>
+                                <li><a href="#">desgin</a></li>
+                                <li><a href="#">ux</a></li>
+                                <li><a href="#">usability</a></li>
+                                <li><a href="#">develop</a></li>
+                                <li><a href="#">icon</a></li>
+                                <li><a href="#">business</a></li>
+                                <li><a href="#">consult</a></li>
+                                <li><a href="#">kit</a></li>
+                                <li><a href="#">keyboard</a></li>
+                                <li><a href="#">mouse</a></li>
+                                <li><a href="#">tech</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="leftbanner">
+                        <img src="https://dummyimage.com/350x600" class="img-responsive" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="~/Content/assets/js/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        setTimeout(function () {
+            // $(".menulistforhide").hide();
+        }, 800);
+        $("#navbarSupportedContent").css("visibility", "hidden");
+
+    });
+</script>

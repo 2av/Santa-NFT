@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using Santa_NFT.Models.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -23,7 +24,8 @@ namespace Santa_NFT.Models.Repository
                     Action = (t.BlogId>0)?"UPDATE":"INSERT",
                     BlogId = t.BlogId,
                     BlogTitle=t.BlogTitle,
-                    BlogDescriptions=t.BlogDescriptions,
+                    BlogShortDescriptions=t.BlogShortDescriptions,
+                    BlogDescriptions =t.BlogDescriptions,
                     BlogCategoryId=t.BlogCategoryId,
                     DisplayOrder=t.DisplayOrder,
                     BlogBanner=t.BlogBanner,
@@ -66,6 +68,20 @@ namespace Santa_NFT.Models.Repository
                     Action = "SELECT",
                 };
                 var _dbResponse = db.Query<Blog>("procBlog", reqParam, commandType: CommandType.StoredProcedure).ToList();
+                objResponse = _dbResponse;
+            }
+            return objResponse;
+        }
+        public List<vmBlogCategoryCount> GetBlogCategoryCount()
+        {
+            List<vmBlogCategoryCount> objResponse = new List<vmBlogCategoryCount>();
+            using (IDbConnection db = new SqlConnection(sqlconn))
+            {
+                var reqParam = new
+                {
+                    Action = "BlogCategoryCount",
+                };
+                var _dbResponse = db.Query<vmBlogCategoryCount>("procBlog", reqParam, commandType: CommandType.StoredProcedure).ToList();
                 objResponse = _dbResponse;
             }
             return objResponse;

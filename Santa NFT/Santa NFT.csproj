@@ -140,6 +140,7 @@
     <Compile Include="Models\Repository\BlogCategoryRepository.cs" />
     <Compile Include="Models\Repository\BlogRepository.cs" />
     <Compile Include="Models\Repository\IRepository.cs" />
+    <Compile Include="Models\ViewModel\vmBlogCategoryCount.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -3782,6 +3783,7 @@
     <Content Include="Views\Blog\ListAll.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Blog\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
