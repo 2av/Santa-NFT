@@ -1,4 +1,4 @@
-﻿@model  List<Santa_NFT.Models.Blog>
+﻿@model  List<Santa_NFT.Models.BlogCategory>
 
 @{
     ViewBag.Title = "Staff List";
@@ -21,7 +21,7 @@
         <div class="card">
             <div class="header">
                 <h2>
-                    Blog Details <a href="/Blog/Create" class="btn btn-success">Add New</a>
+                    Blog Category Details <a class="btn btn-success" href="/BlogCategory/Create">Add New</a>
                 </h2>
                 @*<ul class="header-dropdown m-r--5">
                     <li class="dropdown">
@@ -29,7 +29,7 @@
                             <i class="material-icons">more_vert</i>
                         </a>
                         <ul class="dropdown-menu pull-right">
-                            <li><a href="/Blog/Create">Add New</a></li>
+                            <li><a href="/BlogCategory/Create">Add New</a></li>
 
                         </ul>
                     </li>
@@ -40,8 +40,7 @@
                     <table class="table table-bordered table-striped table-hover dataTable js-exportable">
                         <thead>
                             <tr>
-                                <th>Title</th>
-                                <th>Display Order</th>
+                                <th>Blog Category</th>
                                 <th colspan="2">Action</th>
                              
 
@@ -60,11 +59,11 @@
                                 foreach (var item in Model)
                                 {
                                     <tr>
-                                        <td>@item.BlogTitle</td>
+                                        <td>@item.BlogCategoryName</td>
                                   
-                                        <td>@item.DisplayOrder</td>
-                                        <td><a href="/Blog/Create/@item.BlogId">Edit</a></td>
-                                        <td><span class="btndelete" data-id="@item.BlogId">Delete</span></td>
+                                     
+                                        <td><a href="/BlogCategory/Create/@item.BlogCategoryId">Edit</a></td>
+                                        <td><span class="btndelete" data-id="@item.BlogCategoryId">Delete</span></td>
                                     </tr>
                                 }
                             }
@@ -83,7 +82,7 @@
     $(document).ready(function () {
         $(".btndelete").click(function () {
             debugger;
-            var conf = confirm("Are you sure to delete this Blog record");
+            var conf = confirm("Are you sure to delete this Blog Category record");
             if (conf) {
                 
                 var data = {
@@ -92,7 +91,7 @@
                     
                         $.ajax({
                             type: "POST",
-                            url: "/Blog/DeleteData",
+                            url: "/BlogCategory/DeleteData",
                             data: JSON.stringify(data),
                             contentType: "application/json; charset=utf-8",
                             dataType: "json",

@@ -39,6 +39,14 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-4 col-sm-12">
+            <div class="form-group">
+                <label for="username">Meta Tag</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="MetaTag" placeholder="Enter Meta Tag" value="@Model.BlogTitle" />
+                </div>
+            </div>
+        </div>
         <div class="col-md-12 col-sm-12">
             <div class="form-group">
                 <label for="username">Blog Short Descriptions</label>
@@ -66,12 +74,13 @@
             </div>
             @if (!string.IsNullOrEmpty(Model.BlogBanner))
             {
-                <img src="~/Uploads/@Model.BlogBanner" style="width:100%"/>
+                <img src="~/Uploads/@Model.BlogBanner" style="width:100%" />
             }
         </div>
+        <br />
+        <div class="btn btn-success" onclick="SaveBlog()">Save</div>
+        <a href="/Blog/ListAll">Back To List</a>
         <br /><br />
-        <button class="btn btn-success" onclick="SaveBlog()">Save</button>
-
     </div>
 </div>
 <script>
@@ -93,15 +102,16 @@
 
     });
     function SaveBlog() {
-        debugger;
+      
         var data = {
             BlogId: $("#BlogId").val(),
-            BlogTitle: $("#BlogTitle").val(),
+            BlogTitle: $("#BlogTitle").val().trim(),
             BlogShortDescriptions: CKEDITOR.instances.BlogShortDescriptions.getData(),
             BlogDescriptions: CKEDITOR.instances.BlogDescriptions.getData(),
             DisplayOrder: $("#DisplayOrder").val(),
             BlogCategoryId: $("#BlogCategoryId").val(),
-            BlogBanner: $("#BlogBanner").val()
+            BlogBanner: $("#BlogBanner").val(),
+            MetaTag: $("#MetaTag").val().trim()
         }
         if (data.BlogTitle == "") {
             //popupV1('Please Enter Blog Title', "Message", "");
@@ -128,9 +138,10 @@
             dataType: "json",
             success: function (data) {
                 alert(data);
-                location.reload();
+                location.href = location.origin + '/Blog/ListAll'
             }
         });
 
     }
+   
 </script>

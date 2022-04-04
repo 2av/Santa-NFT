@@ -41,6 +41,10 @@ namespace Santa_NFT.Controllers
         {
             return Json(new BlogRepository().AddOrUpdate(obj));
         }
+        public ActionResult DeleteData(Blog obj)
+        {
+            return Json(new BlogRepository().Delete(obj));
+        }
         public ActionResult Details(string id)
         {
             BlogRepository repo = new BlogRepository();

@@ -20,7 +20,7 @@ namespace Santa_NFT.Models.Repository
             {
                 var reqParam = new
                 {
-                    Action = "SELECT",
+                    Action = (t.BlogCategoryId > 0) ? "UPDATE" : "INSERT",
                     BlogCategoryId = t.BlogCategoryId,
                     BlogCategoryName = t.BlogCategoryName,
                    
@@ -33,7 +33,19 @@ namespace Santa_NFT.Models.Repository
 
         public string Delete(BlogCategory t)
         {
-            throw new NotImplementedException();
+            string objResponse = null;
+            using (IDbConnection db = new SqlConnection(sqlconn))
+            {
+                var reqParam = new
+                {
+                    Action = "DELETE",
+                    BlogCategoryId = t.BlogCategoryId,
+                    ActionBy = 1
+                };
+                var _dbResponse = db.Query<string>("procBlogCategory", reqParam, commandType: CommandType.StoredProcedure).ToList();
+                objResponse = _dbResponse.FirstOrDefault();
+            }
+            return objResponse;
         }
 
         public BlogCategory Get(int id)

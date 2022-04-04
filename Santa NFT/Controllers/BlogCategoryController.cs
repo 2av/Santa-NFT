@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Santa_NFT.Models;
+using Santa_NFT.Models.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +10,30 @@ namespace Santa_NFT.Controllers
 {
     public class BlogCategoryController : Controller
     {
-        // GET: BlogCategory
         public ActionResult Index()
         {
-            return View();
+            BlogCategoryRepository repo = new BlogCategoryRepository();
+            return View(repo.GetAll());
         }
+        public ActionResult Create(string id)
+        {
+
+            BlogCategory obj = new BlogCategory();
+
+            if (!string.IsNullOrEmpty(id))
+            {
+                BlogCategoryRepository repo = new BlogCategoryRepository();
+                obj = repo.Get(Convert.ToInt32(id));
+            }
+            return View(obj);
+        }
+        public ActionResult SaveData(BlogCategory obj)
+        {
+            return Json(new BlogCategoryRepository().AddOrUpdate(obj));
+        }
+        public ActionResult DeleteData(BlogCategory obj)
+        {
+            return Json(new BlogCategoryRepository().Delete(obj));
+        } 
     }
 }

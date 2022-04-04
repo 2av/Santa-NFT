@@ -19,6 +19,8 @@ namespace Santa_NFT.Models
         public int? DisplayOrder { get; set; }
 
         public string BlogBanner { get; set; }
-      
+        public string MetaTag { get; set; }
+
+
     }
 }

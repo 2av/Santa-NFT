@@ -3784,11 +3784,12 @@
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
     <Content Include="Views\Blog\Details.cshtml" />
+    <Content Include="Views\BlogCategory\Create.cshtml" />
+    <Content Include="Views\BlogCategory\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Uploads\" />
-    <Folder Include="Views\BlogCategory\" />
     <Folder Include="Views\FileManager\" />
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,49 @@
+﻿@model Santa_NFT.Models.BlogCategory
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+ 
+<div class="container">
+    <div class="row">
+        <input type="hidden" id="BlogCategoryId" value="@Model.BlogCategoryId" />
+        <div class="col-md-4 col-sm-12">
+            <div class="form-group">
+                <label for="username">Blog Category Name</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="BlogCategoryName" placeholder="Enter Blog Category" value="@Model.BlogCategoryName" />
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <button class="btn btn-success" onclick="SaveData()">Save</button>
+</div>
+<script> 
+    function SaveData() {
+        debugger;
+        var data = {
+            BlogCategoryId: $("#BlogCategoryId").val(),
+            BlogCategoryName: $("#BlogCategoryName").val() 
+        }
+        if (data.BlogCategoryName == "") {
+            //popupV1('Please Enter Blog Title', "Message", "");
+            alert('Please Enter Category Name');
+            return;
+        }
+        
+        $.ajax({
+            type: "POST",
+            url: "/BlogCategory/SaveData",
+            data: JSON.stringify(data),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                alert(data);
+                location.href = location.origin + '/BlogCategory/Index'
+            }
+        });
+
+    }
+   
+</script>
