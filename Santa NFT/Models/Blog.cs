@@ -20,7 +20,8 @@ namespace Santa_NFT.Models
 
         public string BlogBanner { get; set; }
         public string MetaTag { get; set; }
-
+        public bool IsPopularFeed { get; set; }
+        public DateTime BlogSchedule { get; set; }
 
     }
 }

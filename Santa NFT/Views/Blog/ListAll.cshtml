@@ -41,6 +41,7 @@
                         <thead>
                             <tr>
                                 <th>Title</th>
+                                <th>Is Popular Feed</th>
                                 <th>Display Order</th>
                                 <th colspan="2">Action</th>
                              
@@ -61,7 +62,7 @@
                                 {
                                     <tr>
                                         <td>@item.BlogTitle</td>
-                                  
+                                        <td>@item.IsPopularFeed</td>
                                         <td>@item.DisplayOrder</td>
                                         <td><a href="/Blog/Create/@item.BlogId">Edit</a></td>
                                         <td><span class="btndelete" data-id="@item.BlogId">Delete</span></td>

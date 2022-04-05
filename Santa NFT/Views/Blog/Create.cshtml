@@ -7,8 +7,8 @@
     <script src="~/Content/Theme/Admin/plugins/ckeditor/ckeditor.js"></script>
 </head>
 <div class="container">
+    <input type="hidden" id="BlogId" value="@Model.BlogId" />
     <div class="row">
-        <input type="hidden" id="BlogId" value="@Model.BlogId" />
         <div class="col-md-4 col-sm-12">
             <div class="form-group">
                 <label for="username">Blog Title</label>
@@ -47,6 +47,31 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-4 col-sm-12">
+            <div class="form-group" style="margin:30px 0px">
+                @if (Model.IsPopularFeed)
+                {
+                    <input type="checkbox" class="form-control" id="IsPopularFeed" checked="checked" style="opacity:1" />
+                }
+                else
+                {
+                    <input type="checkbox" class="form-control" id="IsPopularFeed" style="opacity:1" />
+                }
+                <label for="IsPopularFeed">Popular Feed</label>
+
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <div class="form-group">
+                <label for="username">BlogSchedule</label>
+                <div class="input-group mb-3">
+                    <input type="hidden" id="hidBlogSchedule" value="@Model.BlogSchedule"/>
+                    <input type="datetime-local" id="BlogSchedule" value="" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-md-12 col-sm-12">
             <div class="form-group">
                 <label for="username">Blog Short Descriptions</label>
@@ -59,6 +84,8 @@
                 <textarea class="form-control" id="BlogDescriptions">@Model.BlogDescriptions</textarea>
             </div>
         </div>
+    </div>
+    <div class="row">
         <div class="col-12">
             <div class="file-upload">
                 <div class="file-select">
@@ -84,6 +111,37 @@
     </div>
 </div>
 <script>
+    window.addEventListener("load", function () {
+        var now = new Date();
+        debugger;
+        if ($("#hidBlogSchedule").val() != "") {
+            now = new Date($("#hidBlogSchedule").val());
+            var currentdate = new Date();
+            if (now < currentdate) {
+                now = currentdate;
+            }
+            
+        }
+
+        
+        var utcString = now.toISOString().substring(0, 19);
+        
+        var year = now.getFullYear();
+        var month = now.getMonth() + 1;
+        var day = now.getDate();
+        var hour = now.getHours();
+        var minute = now.getMinutes();
+        var second = now.getSeconds();
+        var localDatetime = year + "-" +
+            (month < 10 ? "0" + month.toString() : month) + "-" +
+            (day < 10 ? "0" + day.toString() : day) + "T" +
+            (hour < 10 ? "0" + hour.toString() : hour) + ":" +
+            (minute < 10 ? "0" + minute.toString() : minute) +
+            utcString.substring(16, 19);
+        var datetimeField = document.getElementById("BlogSchedule");
+        datetimeField.value = localDatetime;
+    });
+
     $(document).ready(function () {
         CKEDITOR.replace('BlogShortDescriptions', {
             fullPage: true,
@@ -102,7 +160,7 @@
 
     });
     function SaveBlog() {
-      
+
         var data = {
             BlogId: $("#BlogId").val(),
             BlogTitle: $("#BlogTitle").val().trim(),
@@ -111,7 +169,9 @@
             DisplayOrder: $("#DisplayOrder").val(),
             BlogCategoryId: $("#BlogCategoryId").val(),
             BlogBanner: $("#BlogBanner").val(),
-            MetaTag: $("#MetaTag").val().trim()
+            MetaTag: $("#MetaTag").val().trim(),
+            IsPopularFeed: $("#IsPopularFeed").is(":checked"),
+            BlogSchedule: $("#BlogSchedule").val()
         }
         if (data.BlogTitle == "") {
             //popupV1('Please Enter Blog Title', "Message", "");
@@ -143,5 +203,5 @@
         });
 
     }
-   
+
 </script>

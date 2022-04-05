@@ -30,6 +30,8 @@ namespace Santa_NFT.Models.Repository
                     DisplayOrder=t.DisplayOrder,
                     BlogBanner=t.BlogBanner,
                     MetaTag=t.MetaTag,
+                    IsPopularFeed=t.IsPopularFeed,
+                    BlogSchedule=t.BlogSchedule,
                     ActionBy =1
                 };
                 var _dbResponse = db.Query<string>("procBlog", reqParam, commandType: CommandType.StoredProcedure).ToList();
